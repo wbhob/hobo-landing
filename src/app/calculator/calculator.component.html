@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <form (ngSubmit)="calculateDistance()" #calcForm="ngForm">
+        <div class="row">
+          <div class="col-sm-12">
+            <label>From:</label>
+            <input [(ngModel)]="trip.from" required type="text" name="name" placeholder="Atlanta, GA" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <label>To:</label>
+            <input [(ngModel)]="trip.to" required type="text" name="name" placeholder="Birmingham, AL" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <label>Trip Date:</label>
+            <app-pickadate modelFormat="YYYY-MM-DD" format="mmmm d, yyyy" [(ngModel)]="trip.date" (select)="onSelect($event)" name="date"
+              class="datepicker" [placeholder]="today"></app-pickadate>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <label class="hidden-xs hidden-sm">&nbsp;</label><br class="hidden-xs hidden-sm">
+            <button class="btn btn--primary btn-block type--uppercase" type="submit" [disabled]="!calcForm.form.valid">
+              <span class="btn__text">
+                Calculate
+              </span>
+          </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="pricing pricing-1 boxed boxed--sm boxed--border">
+          <div *ngIf="loaded">
+            <div *ngIf="!error">
+              <h3>Your Estimate</h3>
+              <span class="h2">
+                <strong>{{res.price | currency:'USD':true}}</strong>
+              </span>
+              <span class="type--fine-print">Distance: {{res.distance}} miles</span>
+            </div>
+            <p class="text-center" *ngIf="error">{{error}}</p>
+          </div>
+          <!-- <ng-template >-->
+          <div *ngIf="!loaded" class="spin-cont">
+            <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+              <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+            </svg>
+          </div>
+          <!--</ng-template>-->
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

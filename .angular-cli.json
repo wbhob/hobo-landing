@@ -1,0 +1,103 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "web-landing",
+    "ejected": false
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.json",
+      "prefix": "app",
+      "styles": [
+        "assets/css/bootstrap.css",
+        "assets/css/stack-interface.css",
+        "assets/css/iconsmind.css",
+        "assets/css/lightbox.min.css",
+        "assets/css/socicon.css",
+        "assets/css/flickity.css",
+        "assets/less/theme.less",
+        "assets/css/custom.css",
+        "styles.scss"
+      ],
+      "scripts": [
+        "assets/js/jquery-3.1.1.min.js",
+        "assets/js/flickity.min.js",
+        "assets/js/datepicker.js",
+        "assets/js/easypiechart.min.js",
+        "assets/js/parallax.js",
+        "assets/js/typed.min.js",
+        "assets/js/isotope.min.js",
+        "assets/js/ytplayer.min.js",
+        "assets/js/lightbox.min.js",
+        "assets/js/granim.min.js",
+        "assets/js/countdown.min.js",
+        "assets/js/twitterfetcher.min.js",
+        "assets/js/spectragram.min.js",
+        "assets/js/smooth-scroll.min.js",
+        "assets/js/scripts.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      },
+      "deployUrl": "http://hobo.wilsonhobbs.com/"
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "packageManager": "npm",
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "scss",
+    "component": {
+      "inlineStyle": false,
+      "inlineTemplate": false
+    },
+    "class": {
+      "spec": true
+    },
+    "directive": {
+      "spec": true,
+      "flat": true
+    },
+    "guard": {
+      "flat": true,
+      "spec": true
+    },
+    "interface": {
+      "prefix": "I"
+    },
+    "module": {
+      "flat": false,
+      "spec": false
+    },
+    "pipe": {
+      "spec": true,
+      "flat": true
+    },
+    "service": {
+      "flat": true,
+      "spec": true
+    },
+    "serve": {
+      "port": 4200
+    }
+  }
+}

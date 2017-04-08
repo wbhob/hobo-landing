@@ -1,0 +1,40 @@
+.lighter {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.imagebg::before {
+    background: rgb(0, 0, 0);
+}
+
+[inline] {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    @media (max-width: 1199px) {
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+.hidden1200 {
+    @media (max-width: 1199px) {
+        display: none;
+    }
+}
+
+.type--lowercase {
+    text-transform: lowercase !important;
+}
+
+.height-90 {
+    height: 90vh !important;
+    @media all {
+        height: 90vh !important;
+        & .pos-vertical-center {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+        }
+    }
+}
