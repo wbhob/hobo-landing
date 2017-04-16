@@ -1,3 +1,15 @@
 [hide] {
     visibility: hidden;
 }
+
+.faq {
+    p.lead+.text-block {
+        margin-top: 1.85714285714286em * 2;
+    }
+    div[class*='col-'] {
+        .text-block {
+            margin-top: 1.85714285714286em * 1.5;
+            margin-bottom: 1.85714285714286em;
+        }
+    }
+}

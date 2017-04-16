@@ -17,8 +17,7 @@
         <div class="row">
           <div class="col-sm-12">
             <label>Trip Date:</label>
-            <app-pickadate modelFormat="YYYY-MM-DD" format="mmmm d, yyyy" [(ngModel)]="trip.date" (select)="onSelect($event)" name="date"
-              class="datepicker" [placeholder]="today"></app-pickadate>
+            <input format="mmmm d, yyyy" #dateinput name="date" class="datepicker" [placeholder]="trip.date" type="date">
           </div>
         </div>
         <div class="row">

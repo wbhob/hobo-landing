@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { PickadateComponent } from './pickadate/ng-pickadate.component';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,7 +15,8 @@ import { LegalComponent } from './legal/legal.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 
-window['$'] = require('jquery/dist/jquery');
+import * as $ from 'jquery/dist/jquery';
+import { SupportComponent } from './support/support.component';
 
 const APP_ROUTES = [
   {
@@ -24,6 +25,9 @@ const APP_ROUTES = [
   }, {
     path: 'pricing',
     component: PricingComponent
+  }, {
+    path: 'support',
+    component: SupportComponent
   },
   {
     path: 'legal',
@@ -33,7 +37,7 @@ const APP_ROUTES = [
     path: 'legal/rider',
     component: TosComponent
   }
-]
+];
 
 @NgModule({
   declarations: [
@@ -46,12 +50,13 @@ const APP_ROUTES = [
     LegalComponent,
     PricingComponent,
     CalculatorComponent,
-    PickadateComponent
+    SupportComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [
